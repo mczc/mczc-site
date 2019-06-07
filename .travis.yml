@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- stable
+cache:
+  directories:
+  - node_modules
+script:
+- yarn run build
+git:
+  depth: false
+  quite: true
+branches:
+  only:
+  - master
+deploy:
+  provider: s3
+  access_key_id:
+    secure: e2YN3Upj2wtm95HkuMwuWtzuC3KOx0vCebnS44li5kEZ71eykVG7ua1hvWqjLwGjoE9e5ZcFIbnarF/NKIujYEcDrkfrsqaOQgvGANLy6hLB8azi1ODA9fm2sMDyWD3Mvcyz7g1tFHHsgL0TJQFlKIoJwU7OyseM0L7LprIsR4qXwi9qKTR2dKyStYKODD4veWMKmIrC/CvSYt+abSfpQcf0k7viv3IMkz/Q/8aDCHanDQFc4D6L1d2vSJqlTyhu/JtGRKq220LhVAbGUuk2WgfcgecliCggIzV+9PX6zQfLpC4iSYJbntF7ek8GIBCnrnKKWC4315yXZU9mk/5IZ1bAV8AxrGT7djf8ZuEcjAGCytpc4oMTZjGk/Wtak7lIpWbvcnv4Y/Z7B0ikQHssDEPFR0Klrs5GW/Eb2shrhPPfzSaW38/TxUyOIlHVZU0dTkO40LV15urV5zyTRtpYqj5RzKPUaXyR9jdgoeBYy66emdmz7NwLUBRetHNEt2VCUjSR4/nH0jGIweawiJmqrfShGYSak2AOcP4B6m+URged+FzO3m/IU4G9rWAh6yK2rMlo0V+WO4HJLCV+HWkm0dJvjN85OrZAYU8tZltuJJ+ROsyp/45RxYMmz2z/7yQYM3bKOgMfJExn0tjZ19fnjw3STW+9Gq7LhRHQ0BUtBqI=
+  secret_access_key:
+    secure: kji5Y7oZNVXf/rLpx1qzmNpgCf9iIug3H5VIB4f72Y62fwYsGfCio55QWdXNe7/96tNavD3BK5DOEpyCYSlzmQCGuQ0EBY/oFpUzA+28OM9KeTkPxRQaALoGRhjfyC7DFiShHK71BzRNpNGcIOt9g3DzGxFed0/rBIGiQFpAiOMEuPEc27mwRfJ8SoLyDeZ5mX4r0pPR1sjtQGHHJ5B6Hgo59+FxYYXZlqj9t+ttUOpb5CZcZbgPeXnUsOuSiHW3PxFGydXCYO3hXOmBEwxDkM79iRRMMh/pqfCZbGYRVx6vR0c1B3JlUk7diuOdAQPBCS9esSLunVrM4lVL3OdKzB3AoQkYufghIS1HkaCYMqfGWMwlHbZ+V4xpThhuCRMfPwrfAXkqjf+oA9GAeLuvuUVZf1fP+/n+XV2RKmYpvzyX7gpwtpGU5OfWhGlnrPsv+lQlxrpX760Urb/ifI7PyILB5RBt5zv5stqpRSWAPI22KzWRHwfOCkRYrCgO4qvJdZDKaYKJ9h9W8gZLJLaTQQMzu+CnNzmszdJkOPdccTuRfMCgkZvaSmSgmWEgsYPBwuKSQY+mwCI3wsqCXnLhMmFBBLyr6kf68l9hCsyKbZ3KhEAOvLaRbYzNCSR0KklDCPfv2T+BBhktSduyDXi9eagNknY+ZqHtkCMm9U96EvA=
+  bucket: mczc-site
+  acl: public_read
+  region: ap-south-1
+  local_dir: build
