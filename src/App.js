@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Home of TripZ
+          Home of TRIPZ
         </a>
       </header>
     </div>
