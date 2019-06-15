@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Reinventing Logistics
+          From Manage To Orchestrate
         </p>
         <a
           className="App-link"
@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          MCZC Consulting Pvt Ltd
+          Home of TripZ
         </a>
       </header>
     </div>
